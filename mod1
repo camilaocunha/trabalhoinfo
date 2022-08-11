@@ -1,0 +1,90 @@
+#:kivy 1.11.1
+<MainWidget>:
+    canvas:
+        Color:
+            rgb: 0.5,0.5,0.5
+        Rectangle:
+            size: self.size
+    BoxLayout:
+        orientation:'vertical'
+
+        BoxLayout:
+            orientation:'horizontal'
+            size_hint: (1,0.1)
+            Image:
+                source: 'imgs/eng_eletrica.png'
+                size_hint:(0.15,1)
+                haling: 'center'
+                valign: 'top'
+
+
+            Label:
+                text: 'SUPERVISÓRIO TRABALHO FINAL'
+                font_size: 25
+                size_hint: (0.8,1)
+                halign: 'center'
+                valign: 'middle'
+                markup: True
+                color: 0,0,0,1
+
+            BoxLayout:
+                orientation:'vertical'
+                size_hint_x: None
+                self_hint: (0.2,1)
+                Button:
+                    text: 'Conexão'
+                    on_release: root._modbusPopup.open()
+                Button:
+                    text: 'ScanTime'
+                    on_release: root._scanPopup.open()
+            Image:
+                size_hint: (0.1,1)
+                id: img_com
+                source: 'imgs/desconectado.png'
+        FloatLayout:
+            orientation: 'horizontal'
+            size_hint: (1,0.9)
+            Image:
+                id: fundo
+                source: 'imgs/f1.png'
+                pos_hint: {'top':1,'right':1}
+                size: self.size
+            
+            Button:
+                id: on1
+                background_normal: 'imgs/s1.png'
+                on_release: root.atualiza_botao(self)
+                size_hint: (None, None)
+                width: 60
+                height: 59
+                pos_hint:{'top':0.71,'right':0.168}
+
+            Button:
+                id: on2
+                background_normal: 'imgs/s1.png'
+                on_release: root.atualiza_botao(self)
+                size_hint: (None, None)
+                width: 60
+                height: 59
+                pos_hint:{'top':0.55,'right':0.168}
+
+            Button:
+                id: on3
+                background_normal: 'imgs/s1.png'
+                on_release: root.atualiza_botao(self)
+                size_hint: (None, None)
+                width: 60
+                height: 59
+                pos_hint:{'top':0.41,'right':0.168}
+
+            Button:
+                id: on3
+                background_normal: 'imgs/motor.png'
+                size_hint: (None, None)
+                width: 150
+                height: 96
+                pos_hint:{'top':0.705,'right':0.90}
+        
+
+
+        
